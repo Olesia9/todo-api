@@ -4,8 +4,6 @@ from rest_framework.decorators import api_view, permission_classes, authenticati
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authtoken.models import Token
-# from rest_framework.status import HTTP_400_BAD_REQUEST
-# More rest imports as needed
 from django.contrib.auth import authenticate
 from datetime import date, timedelta
 from .decorators import define_usage
@@ -30,8 +28,6 @@ def api_index(requet):
 
 
 # URL /signin/
-# Note that in a real Django project, signin and signup would most likely be
-# handled by a seperate app. For signup on this example, use the admin panel.
 @define_usage(params={'username': 'String', 'password': 'String'},
               returns={'authenticated': 'Bool', 'token': 'Token String'})
 @api_view(['POST'])
